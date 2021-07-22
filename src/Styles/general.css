@@ -1,0 +1,48 @@
+.propsContainer{
+    position: relative;
+    top: 100px;
+    width: 300px;
+}
+.show{
+    border-radius: 2%;
+    width: 300px;
+}
+.hoveredShow{
+    background-color: black;
+    width: 350px;
+    height: 320px;
+    border-radius: 2%;
+    box-shadow: 1px 1px 1px 1px rgb(43, 40, 40);
+}
+.hoveredShowImage{
+    width: 350px;
+    border-radius: 2%;
+}
+.thumbsUp{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    top: 20px;
+    right: 80px;
+    background-color: white;
+    border-color: grey;
+    border-radius: 100%;
+}
+.thumbsDown{
+    transform: rotate(180deg);
+    position: relative;
+    height: 40px;
+    width: 40px;
+    top: 20px;
+    right: 70px;
+    background-color: white;
+    border-color: grey;
+    border-radius: 100%;
+}
+.playButton{
+    position: relative;
+    top: 20px;
+    right: 120px;
+    height: 40px;
+    width: 40px;
+}

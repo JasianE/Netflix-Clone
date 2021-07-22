@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Startpage from './Components/Startpage'
+import Home from './Components/Home'
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import React, {useState, useEffect} from 'react'
 
 function App() {
+  const [profiles, setProfiles] = useState()
+  const [currentProfile, setCurrentProfile] = useState()
+
+  function changeCurrentProfile(name, src, isKid){
+    setCurrentProfile({name: name, src: src, isKid: isKid})
+  }
+  function setNewProfiles(profileArray){
+    setProfiles(profileArray)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path = '/' render = {props => <Startpage change = {changeCurrentProfile} setNewProfiles = {setNewProfiles} />} />
+          <Route exact path = '/home' render = {props => <Home profiles = {profiles} profile = {currentProfile} change = {changeCurrentProfile} />} />
+        </Switch>
+      </Router>
     </div>
   );
 }
