@@ -7,7 +7,7 @@ function EditPage(props){
     //Takes in each part of the given profiles properties i.e name, src and language
     //No changing isKid because netflix nono
     const [editedName, setEditedName] = useState(props.Profiles[props.chosenProfile - 1].name)
-    const [editedSrc, setEditedSrc] = useState(props.Profiles[props.chosenProfile - 1].src)
+
     const [language, setLanguage] = useState(props.Profiles[props.chosenProfile - 1].language)
     //This stuff is never used and is made purely to match netflix's style (kinda lazy but it changes nothing)
     const [Autoplay, setAutoplay] = useState(true)
@@ -40,7 +40,7 @@ function EditPage(props){
     //the location of the previous object, and finally updates startpage state with the new array
     function handleSubmit(e){
         e.preventDefault()
-        const newProfile = {name: editedName, src: editedSrc, isKid: props.Profiles[props.chosenProfile - 1].isKid, language: language}
+        const newProfile = {name: editedName, src: src, isKid: props.Profiles[props.chosenProfile - 1].isKid, language: language}
         let newArray = [...props.Profiles]
         newArray.splice(props.chosenProfile - 1, 1, newProfile)
         props.done(newArray)

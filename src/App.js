@@ -2,7 +2,7 @@ import './App.css';
 import Startpage from './Components/Startpage'
 import Home from './Components/Home'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 function App() {
   const [profiles, setProfiles] = useState()
